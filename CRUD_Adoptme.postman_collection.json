@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "f6546aec-f7e6-4278-a15a-ef835ccd2db1",
+		"name": "CRUD_Adoptme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34866580"
+	},
+	"item": [
+		{
+			"name": "Get_users_adoptme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ceate_User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete_user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/6709d85501890ee2005a5488",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"6709d85501890ee2005a5488"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mockusers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/mocks/mokingusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mocks",
+						"mokingusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify_user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get_users_adopme_byID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/6709d85501890ee2005a5488",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"6709d85501890ee2005a5488"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_allUsers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/FFFFFFFFFFFFFFFFFFFFFFFF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"FFFFFFFFFFFFFFFFFFFFFFFF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate_users_pets_by_mock",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetPet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"tita\",\r\n \"specie\":\"mono\",\r\n \"birthDate\":2000,\r\n    \"adopted\": false,\r\n    \"owner\": \"\",\r\n    \"image\":\"\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPet_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pets/670dc68fb71150a91de1fdce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets",
+						"670dc68fb71150a91de1fdce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_pet_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pets/670dc68fb71150a91de1fdcf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets",
+						"670dc68fb71150a91de1fdcf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_allPets",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pets/FFFFFFFFFFFFFFFFFFFFFFFF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets",
+						"FFFFFFFFFFFFFFFFFFFFFFFF"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
