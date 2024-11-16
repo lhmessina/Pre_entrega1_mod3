@@ -20,7 +20,7 @@ import { specs } from './config/swagger.config.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
-const connection = mongoose.connect("")
+const connection = mongoose.connect("mongodb+srv://root:root@cluster0.fdk9h5r.mongodb.net/adoptme")
 logger.info(" conexion a mongodb://localhost:27017/adopme")
 app.use(express.json());
 app.use(cookieParser());

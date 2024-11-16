@@ -7,6 +7,7 @@ const router = Router();
 
 router.get('/',adoptions_controller.getadoption);
 router.get('/:aid',adoptions_controller.getAdoptionById);
+router.delete('/:aid',adoptions_controller.deleteAdoption);
 //router.get('/',AdoptionController.getAllAdoptions);
 
 // router.get('/:aid',adoptions_controller.getAdoption);

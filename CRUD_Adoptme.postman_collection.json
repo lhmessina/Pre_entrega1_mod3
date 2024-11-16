@@ -326,6 +326,14 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "delete_all_adoptions",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }

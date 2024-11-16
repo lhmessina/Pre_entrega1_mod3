@@ -27,5 +27,15 @@ export class AdoptionService{
                          return adoption;
                          }
                  
+                    async deleteadoptionById(id){
 
+                        const adoption = this.deleteadoptionById(id)
+                        return adoption
+                    }
+                    async deleteAlladoptions (params)  {
+                        const pet = this.adoptions.deleteAll()
+                        return pet
+                    }
+
+                    
                 }
