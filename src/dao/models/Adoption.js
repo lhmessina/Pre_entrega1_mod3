@@ -17,3 +17,7 @@ const schema = new mongoose.Schema({
 const adoptionModel = mongoose.model(collection,schema);
 
 export default adoptionModel;
+
+//
+
+

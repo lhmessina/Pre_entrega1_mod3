@@ -233,6 +233,99 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Modify_pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pets/670ed1391f728c6cfb54a0c2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets",
+						"670ed1391f728c6cfb54a0c2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_adoptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/adoptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"adoptions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_adoption",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/adoptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"adoptions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_adoption_by_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/adoptions/673282d9b0394fccb7b7fa82",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"adoptions",
+						"673282d9b0394fccb7b7fa82"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

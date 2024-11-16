@@ -1,0 +1,21 @@
+paths:
+  /api/pets/{pid}:
+    delete:
+      summary: delete one pet - If {pid} = FFFFFFFFFFFFFFFFFFFFFFFF all pets will be deleted
+      description: delete a pet by Id
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: Id pet
+          schema:
+            type: string
+      responses:
+        200:
+          description: Pet deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"

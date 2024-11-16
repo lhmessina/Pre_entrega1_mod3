@@ -1,0 +1,21 @@
+paths:
+  /api/users/:
+    post:
+      summary: Create a new user
+      description: create a user
+      tags:
+        - Users
+      requestBody:
+        required: true
+        description: user data
+        content:
+            application/json:
+              schema:
+               $ref: "#/components/requestBody/userBody"
+      responses:
+        201:
+          description: user created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/users"

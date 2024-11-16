@@ -1,0 +1,57 @@
+
+paths:
+  /api/pets/{pid}:
+    get:
+      summary: Returns individual pet
+      description: returns pet by id
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: Id pet
+          schema:
+            type: string
+      responses:
+        200:
+          description: pet by Id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+
+
+
+
+# {
+#   "/api/pets/{pid}": {
+#     "get": {
+#       "description": "Returns a pet by its id ",
+#       "operationId": "getPetsById",
+#         "requestBody": {
+#            "required": true,
+#             "content"{
+#             "application/json": {
+#               "schema": {
+#                   "$ref": "#/components/requestBody/petBody"
+#       "responses": {
+#         "200": {         
+#           "description": "response an  objet with parameters  of the PetId .",
+#            "content": {
+#             "application/json": {
+#               "schema": {
+#                 "type": "array",
+#                 "items": {
+#                   "$ref": "#/components/schemas/Pets"
+#                 }
+#               }
+#             }
+#           }
+#         }
+#       }
+#     }
+#   }
+#             }
+#         }
+#     }}}

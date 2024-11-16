@@ -1,0 +1,21 @@
+paths:
+  /api/users/{uid}:
+    get:
+      summary: Returns individual user
+      description: returns user by id
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          description: Id user
+          schema:
+            type: string
+      responses:
+        200:
+          description: user by Id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"

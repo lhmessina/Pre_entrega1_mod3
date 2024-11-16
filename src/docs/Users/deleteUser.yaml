@@ -1,0 +1,21 @@
+paths:
+  /api/users/{uid}:
+    delete:
+      summary: delete one user - If {uid}} = FFFFFFFFFFFFFFFFFFFFFFFF all users will be deleted
+      description: delete a user by Id
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          description: Id user
+          schema:
+            type: string
+      responses:
+        200:
+          description: user deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"

@@ -20,6 +20,7 @@ export class PetService {
         return pet
      }  
     async create  (doc) {
+        console.log("doc",doc)
         const pet = this.pets.save(doc)  
         return pet;
         }
@@ -29,6 +30,11 @@ export class PetService {
         const pet = this.pets.saveMany(doc)  
         return pet;
         }
+    async modifyPet (pid, params)  {
+
+        const pet = this.pets.update(pid,params) 
+        return pet;
+    }  
  
     async deleteById (pid)  {
             const pet = this.pets.delete(pid)

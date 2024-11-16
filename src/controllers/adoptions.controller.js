@@ -1,18 +1,29 @@
 import { adoptionsService, petsService, usersService } from "../services/index.js"
+import { AdoptionService } from "../services/adoption.service.js";
 
-const getAllAdoptions = async(req,res)=>{
-    const result = await adoptionsService.getAll();
-    res.send({status:"success",payload:result})
-}
+////////////////////////////////////////
+export class AdoptionController{
+    
 
-const getAdoption = async(req,res)=>{
+    
+    constructor (){
+
+        this.adoptions = new AdoptionService()
+    
+    }
+    getadoption = async(req,res)=>{
+        const result =  await this.adoptions.getadoptions()
+        console.log(result)
+        res.send({status:"success",payload:result})
+    }
+    getAdoptionById = async(req,res)=>{
     const adoptionId = req.params.aid;
     const adoption = await adoptionsService.getBy({_id:adoptionId})
     if(!adoption) return res.status(404).send({status:"error",error:"Adoption not found"})
     res.send({status:"success",payload:adoption})
-}
+    } 
 
-const createAdoption = async(req,res)=>{
+    createAdoption = async(req,res)=>{
     const {uid,pid} = req.params;
     const user = await usersService.getUserById(uid);
     if(!user) return res.status(404).send({status:"error", error:"user Not found"});
@@ -26,8 +37,7 @@ const createAdoption = async(req,res)=>{
     res.send({status:"success",message:"Pet adopted"})
 }
 
-export default {
-    createAdoption,
-    getAllAdoptions,
-    getAdoption
 }
+
+
+

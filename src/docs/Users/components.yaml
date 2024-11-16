@@ -1,0 +1,63 @@
+components:
+  schemas:
+    Users:
+      item:
+        properties:
+          _id: 
+            type: ObjectId
+            description: Mongoo's User Id
+          first_name:
+            type: string
+            description: User name
+          last_name:
+            type: string
+            description: User last name
+          email:
+            type: string
+            description: User email
+          password: 
+            type: string
+            description: User encrypted password
+          role:
+            type: string
+            description: User role
+          pet:
+            type: array
+            description: array with pets id adopted by the user
+      example:
+        _id: 673143155cca7a7969d158f5
+        first_name: Diego
+        last_name: Maradona
+        email: diego.maradona@eeee.com
+        password: $2b$10$8ZPmJdsRkPQpmcciEfNdbO585qDi4bv.ILqgxI01taGh.skc2ZxAe9b
+        role: admin
+        pet: [_id: 6727b7f986ee49d7ffcf59ad]
+  requestBody:
+    userBody:
+        type: object
+        properties:
+        first_name:
+          type: string
+          description: User name
+        last_name:
+          type: string
+          description: User  last name
+        email:
+          type: string
+          description: user email
+        password:
+          type: string
+          description: user password to be hashed 
+        role:
+          type: string
+          description: user role
+        pet:
+            type: array
+            description: array with pets id adopted by the user
+    example:
+        first_name: Diego
+        last_name: Maradona
+        email: diego.maradona@eeee.com
+        password: cancion
+        role: admin
+        pet: [_id: 6727b7f986ee49d7ffcf59ad]

@@ -1,5 +1,5 @@
 import petModel from "./models/Pet.js";
-
+import userModel from "./models/User.js";
 export default class Pet {
 
     get = (params) =>{
@@ -7,7 +7,7 @@ export default class Pet {
     }
 
     getBy = (params) =>{
-        return petModel.findOne(params);
+        return petModel.findOne(params)
     }
 
     save = (doc) =>{
@@ -18,7 +18,7 @@ export default class Pet {
     }
 
     update = (id,doc) =>{
-        return petModel.findByIdAndUpdate(id,{$set:doc})
+        return petModel.findByIdAndUpdate(id,{$set:doc},{ new: true })
     }
 
     delete = (id) =>{
@@ -26,8 +26,7 @@ export default class Pet {
     }
 
     deleteall = () =>{
-        console.log("dentro del delete" )
-        //return userModel.findByIdAndDelete(id);
+        
         return petModel.deleteMany();
     }
 }

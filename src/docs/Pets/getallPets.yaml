@@ -1,0 +1,39 @@
+
+paths:
+  /api/pets:
+    get:
+      summary: get all pets
+      description: Get all pets
+      tags:
+        - Pets
+      responses:
+        200:
+          description: Return an array of pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+
+
+# {
+#   "/api/pets": {
+#     "get": {
+#       "description": "Returns all pets from the system that the pet has access to",
+#       "responses": {
+#         "200": {         
+#           "description": "An array  of pets.",
+#           "content": {
+#             "application/json": {
+#               "schema": {
+#                 "type": "array",
+#                 "items": {
+#                   "$ref": "#/components/schemas/Pets"
+#                 }
+#               }
+#             }
+#           }
+#         }
+#       }
+#     }
+#   }
+# }

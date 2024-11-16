@@ -1,6 +1,6 @@
 //import { usersService } from "../services/index.js"
 import { UserService } from "../services/user.service.js";
-
+import { logger } from "../utils/logger.js";
 export class UserControllers{
     constructor() {
 
@@ -27,9 +27,10 @@ export class UserControllers{
 
     createUser = async (req,res) => {
        const newUser = req.body
-       console.log(newUser)
+       //console.log(newUser)
        const  user = await this.userService.create(newUser)
-       res.send({status:"success",payload:user})
+       return res.status(201).json({status:"success",payload:user})
+       //res.send({status:"success",payload:user})
 
     }
 
@@ -37,7 +38,8 @@ export class UserControllers{
        const userId = req.params.uid;
        
        if (userId == "FFFFFFFFFFFFFFFFFFFFFFFF"){
-         this.userService.deleteUsers()
+        logger.warn("se ejecuto el borrado de todos los usuarios") 
+        this.userService.deleteUsers()
          res.send({status:"success",message:"TODOS LOS USERS BORRADOS"})
                                                 }
        else{
@@ -47,7 +49,7 @@ export class UserControllers{
         
             
         const userDel = this.userService.deleteUserByid(userId)
-        res.send({status:"success",message:userId})
+        res.send({status:"success",message:`se elimio el user ID ${userId}`})
                     } 
      else {
         res.send({status:"NOK",message:"User doesn't exist"})
@@ -57,8 +59,9 @@ export class UserControllers{
 
    updateUser = async(req,res)=>{
     const updateBody = req.body;
+   
     const userId = req.params.uid;
-    console.log(updateBody)
+    
     const user = await this.userService.getuserByid(userId);
     console.log("USUARIO:",user)
     

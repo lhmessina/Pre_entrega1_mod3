@@ -1,0 +1,77 @@
+
+paths:
+  /api/pets/{pid}:
+    put:
+      summary: Update pet parameters
+      description: Update a pet
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: Id pet
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Pet data
+        content:
+            application/json:
+              schema:
+               $ref: "#/components/requestBody/petBody"
+      responses:
+        200:
+          description: Update pet
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+# {
+#   "/api/pets/{pid}": {
+#     "get": {
+#       "description": "Returns a pet by its id ",
+#       "operationId": "getPetsById",
+#         "requestBody": {
+#            "required": true,
+#             "content"{
+#             "application/json": {
+#               "schema": {
+#                   "$ref": "#/components/requestBody/petBody"
+#         "responses": {
+#         "200": {         
+#           "description": "response an  objet with parameters  of the PetId .",
+#            "content": {
+#             "application/json": {
+#               "schema": {
+#                 "type": "array",
+#                 "items": {
+#                   "$ref": "#/components/schemas/Pets"
+#                 }
+#               }
+#             }
+#           }
+#         }
+#       }
+#     }
+#   }
+#             }
+#         }
+#     }}}
+#      "parameters":{[
+#      {
+#       
+#       "in": "path",
+#       "description": "ID of pet to use",
+#       "required": true,
+#       "schema": {
+#         "type": "string",
+#        "requestBody": {
+          # "required": true,
+#           "$ref": "#/components/schemas/Pets"
+#         }
+#       }   
+#      }
+#        ]
+# }
+# }

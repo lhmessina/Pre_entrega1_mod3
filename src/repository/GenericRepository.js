@@ -9,7 +9,7 @@ export default class GenericRepository {
     }
 
     getBy = (params) =>{
-        return this.dao.getBy(params);
+        return this.dao.getBy(params).populate()
     }
 
     create = (doc) =>{

@@ -2,8 +2,6 @@ import { request,response } from "express";
 import {UserService}from "../services/user.service.js"
 
 import { logger } from "../utils/logger.js";
-
-
 const cont_user = new UserService() 
 
  ///
@@ -14,28 +12,18 @@ const cont_user = new UserService()
  
     VerificaUser  =  async (req = request, res = response ,next) => {
     
-    
+   
     const {email} = req.body
+    logger.info(`Intento de creacion de usuario ${email}`)
     
-    
-    // console.log('email:',email)
-    // console.log("andentro del middle")
+    console.log('email:',email)
+    console.log("andentro del middle")
     const userEmail = await cont_user.getuserByemail(email)
-    if (userEmail ){
-        try{
-        logger.info(`Intento de creacion con usuario existente : ${email}`)
+    if (userEmail )
         res.send({status:"NOK",payload:"esiste"})
-    return logger.error("error") 
-    }
-           
-        catch{
-            
-        }  }  
+   
     else
         
-    logger.info(`Se creo el   usuario ${email}`)
-    next(
-        
-    )
+    
+    next()
 } }
-
